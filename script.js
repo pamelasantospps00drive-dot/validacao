@@ -83,7 +83,7 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 
     const conteudoCSV = "Emails\n" + emailsValidosLista.join("\n");
     
-    // Configura o Blob com BOM (Byte Order Mark) para o Excel ler acentos e quebras de linha perfeitamente
+
     const blob = new Blob(["\ufeff" + conteudoCSV], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     
