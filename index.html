@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de E-mails CSV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Validador de E-mails (CSV)</h1>
+        <p>Anexe seu arquivo CSV para separar os e-mails válidos dos inválidos.</p>
+        
+        <div class="upload-section">
+            <input type="file" id="csvFile" accept=".csv" />
+        </div>
+
+        <div class="results-section">
+            <h2>Resultados da Validação</h2>
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>E-mail</th>
+                        <th>Status</th>
+                        <th>Motivo/Erro</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
