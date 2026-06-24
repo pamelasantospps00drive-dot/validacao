@@ -46,7 +46,8 @@ function processarCSV(texto) {
     const downloadBtn = document.getElementById('downloadBtn');
     const contador = document.getElementById('contador');
     
-    contador.innerText = (${emailsValidosLista.length});
+    // CORRIGIDO: Removido os parênteses e o cifrão incorretos
+    contador.innerText = emailsValidosLista.length;
 
     if (emailsValidosLista.length > 0) {
         downloadBtn.disabled = false;
@@ -83,7 +84,7 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 
     const conteudoCSV = "Emails\n" + emailsValidosLista.join("\n");
     
-
+    // Configura o Blob com BOM (Byte Order Mark) para o Excel ler acentos e quebras de linha perfeitamente
     const blob = new Blob(["\ufeff" + conteudoCSV], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     
