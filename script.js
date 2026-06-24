@@ -22,7 +22,6 @@ function processarCSV(texto) {
     emailsValidosLista = [];
 
     linhas.forEach(email => {
-        // Se a linha for exatamente o cabeçalho do Excel (ex: "email" ou "e-mail"), ignora
         if (email.toLowerCase() === 'email' || email.toLowerCase() === 'e-mail' || email.toLowerCase() === 'emails') {
             return;
         }
@@ -42,11 +41,9 @@ function processarCSV(texto) {
         tableBody.appendChild(tr);
     });
 
-    // Atualiza o botão e o contador na tela
     const downloadBtn = document.getElementById('downloadBtn');
     const contador = document.getElementById('contador');
     
-    // CORRIGIDO: Removido os parênteses e o cifrão incorretos
     contador.innerText = emailsValidosLista.length;
 
     if (emailsValidosLista.length > 0) {
@@ -84,7 +81,6 @@ document.getElementById('downloadBtn').addEventListener('click', function() {
 
     const conteudoCSV = "Emails\n" + emailsValidosLista.join("\n");
     
-    // Configura o Blob com BOM (Byte Order Mark) para o Excel ler acentos e quebras de linha perfeitamente
     const blob = new Blob(["\ufeff" + conteudoCSV], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     
