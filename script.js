@@ -46,7 +46,7 @@ function processarCSV(texto) {
     const downloadBtn = document.getElementById('downloadBtn');
     const contador = document.getElementById('contador');
     
-    contador.innerText = `(${emailsValidosLista.length})`;
+    contador.innerText = (${emailsValidosLista.length});
 
     if (emailsValidosLista.length > 0) {
         downloadBtn.disabled = false;
