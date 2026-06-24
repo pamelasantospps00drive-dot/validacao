@@ -1,4 +1,5 @@
-/* Estilo do botão quando está desativado (sem e-mails válidos) */
+
+
 .btn-desativado {
     padding: 12px 25px;
     background-color: #bdc3c7;
@@ -11,7 +12,6 @@
     transition: background 0.3s;
 }
 
-/* Estilo do botão quando está ativado (com e-mails válidos) */
 .btn-ativado {
     padding: 12px 25px;
     background-color: #27ae60;
@@ -21,10 +21,49 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn-ativado:hover {
     background-color: #219653;
+}
+
+/* Efeito de clique no botão ativo */
+.btn-ativado:active {
+    transform: scale(0.98);
+}
+
+
+.actions-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e9ecef;
+}
+
+.actions-section p {
+    margin: 0;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+#contador {
+    color: #27ae60;
+    font-size: 18px;
+}
+
+
+.valido {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.invalido {
+    color: #c0392b;
+    font-weight: bold;
 }
